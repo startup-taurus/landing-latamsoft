@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" role="img" aria-labelledby="title desc">
+  <title id="title">LatamSoft LinkedIn cover, dark</title>
+  <desc id="desc">Dark mode LinkedIn cover for LatamSoft.</desc>
+  <rect width="1584" height="396" fill="#061826"/>
+  <path d="M1130 46c117 34 204 120 242 228" fill="none" stroke="#12C7B8" stroke-width="3" opacity=".22"/>
+  <path d="M1268 96c64 33 107 89 126 168" fill="none" stroke="#B7F45A" stroke-width="2" opacity=".25"/>
+  <circle cx="1360" cy="102" r="7" fill="#B7F45A"/>
+  <circle cx="1244" cy="290" r="6" fill="#12C7B8"/>
+  <g transform="translate(82 68) scale(0.74)">
+    <path d="M52 36v86c0 18 10 28 28 28h58" fill="none" stroke="#EAF7FF" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M99 84h76c19 0 30 11 30 29v4c0 19-11 30-30 30h-49c-18 0-29 10-29 28v0c0 18 11 29 29 29h79" fill="none" stroke="#12C7B8" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="109" y="109" width="38" height="38" rx="10" fill="#B7F45A"/>
+  </g>
+  <text x="300" y="172" fill="#FFFFFF" font-family="Space Grotesk, Sora, Inter, Segoe UI, Arial, sans-serif" font-size="68" font-weight="760">Latam</text>
+  <text x="494" y="172" fill="#7FD4FF" font-family="Space Grotesk, Sora, Inter, Segoe UI, Arial, sans-serif" font-size="68" font-weight="760">Soft</text>
+  <text x="304" y="236" fill="#EAF7FF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Software que simplifica procesos, optimiza recursos y reduce costos</text>
+</svg>

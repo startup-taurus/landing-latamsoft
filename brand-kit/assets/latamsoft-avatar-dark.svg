@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">LatamSoft social avatar, dark</title>
+  <desc id="desc">Social profile avatar for LatamSoft with the LS symbol on a dark background.</desc>
+  <rect width="1024" height="1024" rx="216" fill="#061826"/>
+  <circle cx="512" cy="512" r="356" fill="#0E2638"/>
+  <g transform="translate(256 256) scale(2)">
+    <defs>
+      <linearGradient id="ls-light-blue" x1="36" y1="28" x2="142" y2="166" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#EAF7FF"/>
+        <stop offset="1" stop-color="#7FD4FF"/>
+      </linearGradient>
+      <linearGradient id="ls-teal-dark" x1="93" y1="72" x2="212" y2="193" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#28E0D0"/>
+        <stop offset="1" stop-color="#12C7B8"/>
+      </linearGradient>
+    </defs>
+    <path d="M52 36v86c0 18 10 28 28 28h58" fill="none" stroke="url(#ls-light-blue)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M99 84h76c19 0 30 11 30 29v4c0 19-11 30-30 30h-49c-18 0-29 10-29 28v0c0 18 11 29 29 29h79" fill="none" stroke="url(#ls-teal-dark)" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="109" y="109" width="38" height="38" rx="10" fill="#B7F45A"/>
+  </g>
+</svg>

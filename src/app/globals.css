@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-color: #F4F7FA;
+    --surface-color: #FFFFFF;
+    --text-color: #17202A;
+    --muted-color: #526373;
+    --border-color: #DCE7EF;
+  }
+
+  [data-theme="dark"],
+  .dark {
+    --bg-color: #061826;
+    --surface-color: #0E2638;
+    --text-color: #EAF7FF;
+    --muted-color: #B8D2E5;
+    --border-color: #21465E;
+  }
+
+  body {
+    @apply bg-background text-text font-body transition-colors duration-300;
+  }
+}

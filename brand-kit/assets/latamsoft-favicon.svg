@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">LatamSoft favicon</title>
+  <rect width="256" height="256" rx="56" fill="#061826"/>
+  <path d="M52 36v86c0 18 10 28 28 28h58" fill="none" stroke="#EAF7FF" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M99 84h76c19 0 30 11 30 29v4c0 19-11 30-30 30h-49c-18 0-29 10-29 28v0c0 18 11 29 29 29h79" fill="none" stroke="#12C7B8" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="109" y="109" width="38" height="38" rx="10" fill="#B7F45A"/>
+</svg>

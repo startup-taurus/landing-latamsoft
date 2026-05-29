@@ -1,0 +1,124 @@
+:root {
+  color-scheme: light;
+  --ls-blue: #063B5C;
+  --ls-teal: #12C7B8;
+  --ls-lime: #B7F45A;
+  --ls-graphite: #17202A;
+  --ls-fog: #F4F7FA;
+  --ls-white: #FFFFFF;
+  --ls-night: #061826;
+  --ls-dark-panel: #0E2638;
+  --ls-text: #17202A;
+  --ls-muted: #526373;
+  --ls-background: #F4F7FA;
+  --ls-surface: #FFFFFF;
+  --ls-border: #DCE7EF;
+  --ls-focus: #12C7B8;
+  --ls-radius-sm: 8px;
+  --ls-radius-md: 14px;
+  --ls-radius-lg: 24px;
+  --ls-font-display: "Space Grotesk", "Sora", "Inter", "Segoe UI", Arial, sans-serif;
+  --ls-font-body: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --ls-text: #EAF7FF;
+  --ls-muted: #B8D2E5;
+  --ls-background: #061826;
+  --ls-surface: #0E2638;
+  --ls-border: #21465E;
+  --ls-focus: #B7F45A;
+}
+
+body {
+  margin: 0;
+  background: var(--ls-background);
+  color: var(--ls-text);
+  font-family: var(--ls-font-body);
+}
+
+.ls-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.ls-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ls-brand img {
+  height: 44px;
+  width: auto;
+}
+
+.ls-hero {
+  padding: 88px 0 72px;
+}
+
+.ls-eyebrow {
+  color: var(--ls-teal);
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.ls-title {
+  max-width: 820px;
+  margin: 16px 0 20px;
+  font-family: var(--ls-font-display);
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: .98;
+  letter-spacing: 0;
+}
+
+.ls-copy {
+  max-width: 680px;
+  color: var(--ls-muted);
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.ls-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.ls-button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: var(--ls-radius-sm);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.ls-button-primary {
+  background: var(--ls-teal);
+  color: var(--ls-night);
+}
+
+.ls-button-secondary {
+  border-color: var(--ls-border);
+  color: var(--ls-text);
+  background: var(--ls-surface);
+}
+
+.ls-panel {
+  background: var(--ls-surface);
+  border: 1px solid var(--ls-border);
+  border-radius: var(--ls-radius-md);
+  padding: 24px;
+}
+
+.ls-accent {
+  color: var(--ls-lime);
+}

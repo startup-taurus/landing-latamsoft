@@ -1,0 +1,39 @@
+{
+  "brand": "LatamSoft",
+  "mode": {
+    "light": {
+      "background": "#F4F7FA",
+      "surface": "#FFFFFF",
+      "text": "#17202A",
+      "muted": "#526373",
+      "border": "#DCE7EF"
+    },
+    "dark": {
+      "background": "#061826",
+      "surface": "#0E2638",
+      "text": "#EAF7FF",
+      "muted": "#B8D2E5",
+      "border": "#21465E"
+    }
+  },
+  "core": {
+    "pacificBlue": "#063B5C",
+    "connectiveTurquoise": "#12C7B8",
+    "digitalLime": "#B7F45A",
+    "technicalGraphite": "#17202A",
+    "clearFog": "#F4F7FA",
+    "night": "#061826",
+    "darkPanel": "#0E2638",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "display": "Space Grotesk",
+    "body": "Inter",
+    "fallback": "Segoe UI, Arial, sans-serif"
+  },
+  "radius": {
+    "small": "8px",
+    "medium": "14px",
+    "large": "24px"
+  }
+}

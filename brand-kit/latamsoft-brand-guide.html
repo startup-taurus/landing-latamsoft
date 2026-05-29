@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LatamSoft - Documento De Identidad Visual</title>
+  <style>
+    :root {
+      --blue: #063B5C;
+      --teal: #12C7B8;
+      --lime: #B7F45A;
+      --graphite: #17202A;
+      --fog: #F4F7FA;
+      --night: #061826;
+      --panel: #0E2638;
+      --muted: #526373;
+      --line: #DCE7EF;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--fog);
+      color: var(--graphite);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.52;
+    }
+    .page {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 44px 0 72px;
+    }
+    .cover {
+      min-height: 520px;
+      padding: 56px;
+      border-radius: 24px;
+      background: var(--night);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .cover:after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 520px;
+      height: 520px;
+      border: 2px solid rgba(18,199,184,.25);
+      border-radius: 50%;
+    }
+    .cover-logo { width: 520px; max-width: 100%; position: relative; z-index: 1; }
+    .kicker {
+      margin-top: 130px;
+      color: var(--teal);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-size: 13px;
+      position: relative;
+      z-index: 1;
+    }
+    h1, h2, h3 {
+      font-family: "Space Grotesk", Sora, Inter, "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+      line-height: 1.05;
+    }
+    h1 {
+      max-width: 780px;
+      margin: 18px 0 18px;
+      font-size: 64px;
+      position: relative;
+      z-index: 1;
+    }
+    .cover p {
+      max-width: 660px;
+      margin: 0;
+      color: #B8D2E5;
+      font-size: 21px;
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      margin-top: 28px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+      break-inside: avoid;
+    }
+    h2 {
+      margin: 0 0 18px;
+      font-size: 34px;
+      color: var(--blue);
+    }
+    h3 {
+      margin: 26px 0 10px;
+      font-size: 22px;
+    }
+    p { margin: 0 0 14px; }
+    ul { margin: 0; padding-left: 22px; }
+    li { margin: 7px 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .preview {
+      min-height: 210px;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--fog);
+    }
+    .preview.dark {
+      background: var(--night);
+      border-color: #21465E;
+    }
+    .preview img { max-width: 100%; max-height: 150px; }
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .swatch {
+      min-height: 126px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.08);
+      font-weight: 800;
+    }
+    .swatch span {
+      display: block;
+      margin-top: 4px;
+      font-weight: 700;
+      opacity: .78;
+      font-size: 13px;
+    }
+    .dark-section {
+      background: var(--night);
+      color: var(--white);
+      border-color: #21465E;
+    }
+    .dark-section h2 { color: var(--teal); }
+    .dark-section p, .dark-section li { color: #B8D2E5; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      margin: 4px 6px 4px 0;
+      border-radius: 999px;
+      background: #E8F7F6;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 14px;
+    }
+    code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: #EEF3F7;
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: .92em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: var(--blue); }
+    .asset-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .asset-list div {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--fog);
+      font-weight: 700;
+    }
+    @media print {
+      body { background: white; }
+      .page { width: 100%; padding: 0; }
+      section, .cover { border-radius: 0; box-shadow: none; }
+      section { page-break-inside: avoid; }
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 46px; }
+      .cover { padding: 32px; }
+      .grid, .swatches, .asset-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="cover">
+      <img class="cover-logo" src="assets/latamsoft-isologo-dark.svg" alt="LatamSoft">
+      <div class="kicker">Documento de identidad visual</div>
+      <h1>Software que simplifica procesos</h1>
+      <p>Identidad visual para una marca tecnologica joven, confiable y visionaria, creada desde Latinoamerica con enfoque internacional.</p>
+    </div>
+
+    <section>
+      <h2>Esencia</h2>
+      <p><strong>LatamSoft</strong> combina desarrollo de software a medida, automatizacion de procesos y productos digitales propios. Su posicionamiento recomendado es tecnologia clara, flexible y confiable para empresas que necesitan operar mejor.</p>
+      <p><strong>Propuesta de valor:</strong> LatamSoft ayuda a empresas a automatizar procesos mediante software a medida y productos digitales, combinando calidad tecnica, innovacion y flexibilidad para simplificar operaciones, optimizar recursos y reducir costos.</p>
+      <span class="pill">Visionaria</span>
+      <span class="pill">Joven</span>
+      <span class="pill">Confiable</span>
+      <span class="pill">Creativa</span>
+      <span class="pill">Tecnica pero clara</span>
+    </section>
+
+    <section>
+      <h2>Sistema De Logo</h2>
+      <div class="grid">
+        <div class="preview"><img src="assets/latamsoft-isologo-light.svg" alt="LatamSoft logo light"></div>
+        <div class="preview dark"><img src="assets/latamsoft-isologo-dark.svg" alt="LatamSoft logo dark"></div>
+        <div class="preview"><img src="assets/latamsoft-symbol-light.svg" alt="LatamSoft symbol light"></div>
+        <div class="preview dark"><img src="assets/latamsoft-symbol-dark.svg" alt="LatamSoft symbol dark"></div>
+      </div>
+      <h3>Concepto</h3>
+      <p>El simbolo combina de forma abstracta la L y la S. Sugiere flujo digital, automatizacion, conexion y movimiento. La referencia a Latinoamerica debe mantenerse sutil, sin mapas literales.</p>
+      <h3>Uso</h3>
+      <ul>
+        <li>Isologo horizontal para web, propuestas y presentaciones.</li>
+        <li>Simbolo LS para avatar, favicon, app icon y productos digitales.</li>
+        <li>Version dark sobre fondos oscuros y version light sobre fondos claros.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Colores</h2>
+      <div class="swatches">
+        <div class="swatch" style="background:#063B5C;color:#fff">Azul Pacifico <span>#063B5C</span></div>
+        <div class="swatch" style="background:#12C7B8;color:#061826">Turquesa <span>#12C7B8</span></div>
+        <div class="swatch" style="background:#B7F45A;color:#061826">Lima Digital <span>#B7F45A</span></div>
+        <div class="swatch" style="background:#17202A;color:#fff">Grafito <span>#17202A</span></div>
+        <div class="swatch" style="background:#F4F7FA;color:#17202A">Niebla <span>#F4F7FA</span></div>
+        <div class="swatch" style="background:#061826;color:#fff">Noche <span>#061826</span></div>
+        <div class="swatch" style="background:#0E2638;color:#fff">Panel Oscuro <span>#0E2638</span></div>
+        <div class="swatch" style="background:#FFFFFF;color:#17202A">Blanco <span>#FFFFFF</span></div>
+      </div>
+      <table>
+        <tr><th>Modo</th><th>Fondo</th><th>Texto</th><th>Accion</th></tr>
+        <tr><td>Claro</td><td><code>#F4F7FA</code> / <code>#FFFFFF</code></td><td><code>#17202A</code></td><td><code>#12C7B8</code></td></tr>
+        <tr><td>Oscuro</td><td><code>#061826</code> / <code>#0E2638</code></td><td><code>#EAF7FF</code></td><td><code>#12C7B8</code></td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Tipografia</h2>
+      <p><strong>Titulares y marca:</strong> Space Grotesk. <strong>Texto y UI:</strong> Inter. <strong>Alternativa:</strong> Sora.</p>
+      <p>Usar pesos semibold y bold para titulares, regular para textos largos y bold para botones. Evitar fuentes decorativas o demasiado futuristas.</p>
+    </section>
+
+    <section class="dark-section">
+      <h2>Modo Dark</h2>
+      <p>El modo oscuro debe ser una parte principal de la marca, no una adaptacion secundaria. Usar fondo <code>#061826</code>, paneles <code>#0E2638</code>, texto <code>#EAF7FF</code>, turquesa para accion y lima como acento puntual.</p>
+      <ul>
+        <li>No usar el logo azul oscuro sobre fondos oscuros.</li>
+        <li>No saturar la interfaz con turquesa y lima al mismo tiempo.</li>
+        <li>Mantener contraste alto en botones, formularios y cards.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Redes Sociales</h2>
+      <div class="grid">
+        <div class="preview"><img src="assets/latamsoft-avatar-light.svg" alt="Avatar light"></div>
+        <div class="preview dark"><img src="assets/latamsoft-avatar-dark.svg" alt="Avatar dark"></div>
+      </div>
+      <p>Usar el simbolo LS para avatar. En posts, usar titulares grandes, fondos limpios y acentos turquesa/lima. No usar el logo completo en espacios pequenos.</p>
+      <h3>Pilares de contenido</h3>
+      <ul>
+        <li>Automatizacion de procesos.</li>
+        <li>Desarrollo de software a medida.</li>
+        <li>Productos digitales propios.</li>
+        <li>Claridad tecnica para negocios.</li>
+        <li>Ahorro de tiempo, recursos y costos.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Web</h2>
+      <p>La web debe ser clara, tecnologica y orientada a conversion. El archivo <code>web/latamsoft-theme.css</code> incluye tokens para modo claro y oscuro.</p>
+      <table>
+        <tr><th>Elemento</th><th>Recomendacion</th></tr>
+        <tr><td>Hero</td><td>Mensaje directo sobre automatizacion, ahorro y claridad.</td></tr>
+        <tr><td>Boton principal</td><td>Turquesa con texto oscuro.</td></tr>
+        <tr><td>Cards</td><td>Radio moderado, borde sutil y contenido escaneable.</td></tr>
+        <tr><td>Iconos</td><td>Lineales, simples, no genericos.</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Usos Correctos E Incorrectos</h2>
+      <div class="grid">
+        <div>
+          <h3>Correctos</h3>
+          <ul>
+            <li>Mantener la escritura LatamSoft.</li>
+            <li>Usar suficiente espacio alrededor.</li>
+            <li>Usar el simbolo para tamanos pequenos.</li>
+            <li>Aplicar version dark en fondos oscuros.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Incorrectos</h3>
+          <ul>
+            <li>No usar mapas literales.</li>
+            <li>No usar rojo como color de marca.</li>
+            <li>No deformar ni estirar el logo.</li>
+            <li>No usar engranajes, robots, cohetes o codigo como simbolo principal.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Activos Incluidos</h2>
+      <div class="asset-list">
+        <div>Logo sin fondo: SVG + PNG</div>
+        <div>Isologo horizontal claro/oscuro</div>
+        <div>Isotipo LS claro/oscuro</div>
+        <div>Avatar para redes</div>
+        <div>Portada LinkedIn</div>
+        <div>Post cuadrado</div>
+        <div>Open Graph web</div>
+        <div>Tokens CSS y JSON</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

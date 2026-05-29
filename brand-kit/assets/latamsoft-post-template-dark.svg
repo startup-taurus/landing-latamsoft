@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">LatamSoft square post template, dark</title>
+  <desc id="desc">Reusable square social post template for LatamSoft.</desc>
+  <rect width="1080" height="1080" fill="#061826"/>
+  <rect x="64" y="64" width="952" height="952" rx="44" fill="#0E2638"/>
+  <path d="M710 176c116 40 199 122 247 246" fill="none" stroke="#12C7B8" stroke-width="4" opacity=".26"/>
+  <path d="M800 258c61 34 108 92 132 162" fill="none" stroke="#B7F45A" stroke-width="4" opacity=".24"/>
+  <circle cx="900" cy="296" r="10" fill="#B7F45A"/>
+  <circle cx="872" cy="470" r="8" fill="#12C7B8"/>
+  <g transform="translate(112 108) scale(0.54)">
+    <path d="M52 36v86c0 18 10 28 28 28h58" fill="none" stroke="#EAF7FF" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M99 84h76c19 0 30 11 30 29v4c0 19-11 30-30 30h-49c-18 0-29 10-29 28v0c0 18 11 29 29 29h79" fill="none" stroke="#12C7B8" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="109" y="109" width="38" height="38" rx="10" fill="#B7F45A"/>
+  </g>
+  <text x="274" y="210" fill="#FFFFFF" font-family="Space Grotesk, Sora, Inter, Segoe UI, Arial, sans-serif" font-size="48" font-weight="760">Latam</text>
+  <text x="406" y="210" fill="#7FD4FF" font-family="Space Grotesk, Sora, Inter, Segoe UI, Arial, sans-serif" font-size="48" font-weight="760">Soft</text>
+  <text x="112" y="518" fill="#FFFFFF" font-family="Space Grotesk, Sora, Inter, Segoe UI, Arial, sans-serif" font-size="72" font-weight="760">Automatiza</text>
+  <text x="112" y="600" fill="#FFFFFF" font-family="Space Grotesk, Sora, Inter, Segoe UI, Arial, sans-serif" font-size="72" font-weight="760">procesos sin</text>
+  <text x="112" y="682" fill="#7FD4FF" font-family="Space Grotesk, Sora, Inter, Segoe UI, Arial, sans-serif" font-size="72" font-weight="760">perder claridad</text>
+  <text x="116" y="790" fill="#B8D2E5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="32" font-weight="500">Desarrollo a medida, productos digitales</text>
+  <text x="116" y="838" fill="#B8D2E5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="32" font-weight="500">y soluciones flexibles para crecer.</text>
+  <rect x="116" y="912" width="238" height="58" rx="29" fill="#B7F45A"/>
+  <text x="148" y="950" fill="#061826" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="23" font-weight="850">latamsoft</text>
+</svg>

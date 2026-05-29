@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 320" role="img" aria-labelledby="title desc">
+  <title id="title">LatamSoft isologo, dark mode version</title>
+  <desc id="desc">LatamSoft horizontal logo with abstract LS symbol and wordmark on a transparent background, optimized for dark mode.</desc>
+  <defs>
+    <linearGradient id="ls-light-blue" x1="45" y1="45" x2="165" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#EAF7FF"/>
+      <stop offset="1" stop-color="#7FD4FF"/>
+    </linearGradient>
+    <linearGradient id="ls-teal-dark" x1="110" y1="85" x2="230" y2="214" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#28E0D0"/>
+      <stop offset="1" stop-color="#12C7B8"/>
+    </linearGradient>
+    <style>
+      .wordmark { font-family: "Space Grotesk", "Sora", "Inter", "Segoe UI", Arial, sans-serif; font-size: 104px; font-weight: 760; letter-spacing: 0; }
+    </style>
+  </defs>
+  <g transform="translate(32 32)">
+    <path d="M52 36v86c0 18 10 28 28 28h58" fill="none" stroke="url(#ls-light-blue)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M99 84h76c19 0 30 11 30 29v4c0 19-11 30-30 30h-49c-18 0-29 10-29 28v0c0 18 11 29 29 29h79" fill="none" stroke="url(#ls-teal-dark)" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="109" y="109" width="38" height="38" rx="10" fill="#B7F45A"/>
+  </g>
+  <text class="wordmark" x="330" y="191" fill="#FFFFFF">Latam</text>
+  <text class="wordmark" x="620" y="191" fill="#7FD4FF">Soft</text>
+</svg>
