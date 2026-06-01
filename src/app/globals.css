@@ -4,23 +4,125 @@
 
 @layer base {
   :root {
-    --bg-color: #F4F7FA;
-    --surface-color: #FFFFFF;
-    --text-color: #17202A;
+    --bg-color: #f4f7fa;
+    --surface-color: #ffffff;
+    --text-color: #17202a;
     --muted-color: #526373;
-    --border-color: #DCE7EF;
+    --border-color: #dce7ef;
   }
 
   [data-theme="dark"],
   .dark {
     --bg-color: #061826;
-    --surface-color: #0E2638;
-    --text-color: #EAF7FF;
-    --muted-color: #B8D2E5;
-    --border-color: #21465E;
+    --surface-color: #0e2638;
+    --text-color: #eaf7ff;
+    --muted-color: #b8d2e5;
+    --border-color: #21465e;
   }
 
   body {
     @apply bg-background text-text font-body transition-colors duration-300;
+    /* Subtle texture so the page never reads as a flat AI gradient. */
+    background-image: radial-gradient(
+         circle at 18% 12%,
+        rgba(18, 199, 184, 0.06),
+        transparent 42%
+      ),
+      radial-gradient(circle at 88% 6%, rgba(183, 244, 90, 0.05), transparent 40%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-brand-lime text-brand-night;
+  }
+
+  /* Headlines get tight, editorial tracking. */
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  /* Monospace eyebrow used across sections — reads like a real product UI. */
+  .eyebrow {
+    @apply font-mono text-xs font-bold uppercase tracking-[0.22em] text-brand-turquoise;
+  }
+
+  /* Lime-to-turquoise gradient text for emphasized words. */
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-lime via-brand-turquoise to-brand-turquoise bg-clip-text text-transparent;
+  }
+
+  /* Fine grain overlay — layered on dark sections to feel printed, not generated. */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Hairline grid backdrop for technical sections. */
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        var(--border-color) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 50%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 50%, transparent 100%);
+  }
+
+  /* Card lift used by feature/portfolio cards. */
+  .card-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+  }
+}
+
+/* Keyframes defined explicitly so they exist even when only referenced via
+   inline `animation:` styles (Tailwind only emits keyframes for used classes). */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }

@@ -3,6 +3,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { Marquee } from "@/components/ui/Marquee";
+import { Aurora } from "@/components/ui/Aurora";
+import { HeroVisual } from "@/components/sections/HeroVisual";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
@@ -11,51 +15,96 @@ export function Hero() {
   const t = content[language].hero;
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 overflow-hidden">
-      {/* Decorative background blur */}
-      <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-brand-blue/30 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vw] bg-brand-turquoise/15 blur-[120px] rounded-full pointer-events-none" />
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+      {/* Animated aurora + hairline grid backdrop */}
+      <Aurora />
+      <div className="absolute inset-0 bg-grid opacity-[0.35] pointer-events-none" />
 
-      <motion.p 
-        className="text-brand-turquoise font-bold uppercase tracking-widest text-sm mb-6 relative z-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        {t.eyebrow}
-      </motion.p>
-      
-      <motion.h1 
-        className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight relative z-10 max-w-5xl"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        {t.title1}<span className="text-brand-lime">{t.title2}</span>{t.title3}
-      </motion.h1>
-      
-      <motion.p 
-        className="text-xl md:text-2xl text-muted max-w-2xl mb-12 relative z-10 leading-relaxed"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      >
-        {t.description}
-      </motion.p>
-      
-      <motion.div 
-        className="flex flex-col sm:flex-row gap-4 relative z-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        <Button size="lg" asChild>
-          <Link href="#contacto">{t.ctaPrimary}</Link>
-        </Button>
-        <Button size="lg" variant="secondary" asChild>
-          <Link href="#soluciones">{t.ctaSecondary}</Link>
-        </Button>
-      </motion.div>
+      <div className="container mx-auto max-w-6xl px-6 relative z-10">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-10 items-center">
+          {/* LEFT — studio headline */}
+          <div className="text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-4 py-1.5 backdrop-blur-sm"
+            >
+              <Sparkles size={14} className="text-brand-lime" />
+              <span className="eyebrow !text-[0.7rem]">{t.eyebrow}</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.08 }}
+              className="font-display font-extrabold leading-[1.0] text-4xl md:text-6xl xl:text-[4.1rem] mt-7 mb-7"
+            >
+              {t.title1}
+              <br className="hidden sm:block" />
+              <span className="relative whitespace-nowrap">
+                <span className="text-gradient">{t.title2}</span>
+                <svg
+                  className="absolute -bottom-2 left-0 w-full"
+                  viewBox="0 0 320 14"
+                  fill="none"
+                  preserveAspectRatio="none"
+                  aria-hidden
+                >
+                  <motion.path
+                    d="M3 8.5C70 4 180 2.5 317 7"
+                    stroke="#B7F45A"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 0.9, delay: 0.5, ease: "easeInOut" }}
+                  />
+                </svg>
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.16 }}
+              className="text-lg md:text-xl text-muted leading-relaxed max-w-xl mx-auto lg:mx-0"
+            >
+              {t.description}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.24 }}
+              className="flex flex-col sm:flex-row gap-3 mt-9 justify-center lg:justify-start"
+            >
+              <Button size="lg" asChild className="group gap-2">
+                <Link href="#contacto">
+                  {t.ctaPrimary}
+                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="#que-hacemos">{t.ctaSecondary}</Link>
+              </Button>
+            </motion.div>
+          </div>
+
+          {/* RIGHT — interactive 3D visual (spotlight + floating LS logo) */}
+          <HeroVisual cardTitle={t.cardTitle} cardStatus={t.cardStatus} cardPoints={t.cardPoints} />
+        </div>
+      </div>
+
+      {/* monospace ticker marquee (reusable, pauses on hover) */}
+      <div className="relative z-10 mt-16 md:mt-20 border-y border-border bg-surface/40 py-4">
+        <Marquee
+          pauseOnHover
+          items={t.ticker.map((item) => (
+            <span className="font-mono text-sm text-muted">{item}</span>
+          ))}
+        />
+      </div>
     </section>
   );
 }

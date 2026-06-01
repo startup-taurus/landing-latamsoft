@@ -4,78 +4,84 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import { MessageCircle, Mail } from "lucide-react";
+import { MessageCircle, Zap, ShieldCheck } from "lucide-react";
+import { Aurora } from "@/components/ui/Aurora";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({ name: "", company: "" });
   const { language } = useLanguage();
-  const t = content[language].contact;
+  const t = content[language].cta;
 
   const handleWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
     const phone = "593995923599";
-    let text = t.whatsappTemplate.replace("{{name}}", formData.name);
-    text = text.replace("{{company}}", formData.company ? (language === 'es' ? ` de ${formData.company}` : ` from ${formData.company}`) : '');
+    let text = t.whatsappTemplate.replace("{{name}}", formData.name || (language === "es" ? "alguien" : "someone"));
+    text = text.replace(
+      "{{company}}",
+      formData.company ? (language === "es" ? ` de ${formData.company}` : ` from ${formData.company}`) : ""
+    );
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
   };
 
   return (
-    <section id="contacto" className="py-24 px-6 relative overflow-hidden">
-      {/* Decorative background blur */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-brand-blue/20 blur-[120px] rounded-full pointer-events-none" />
+    <section id="contacto" className="relative py-24 md:py-32 px-6 overflow-hidden">
+      <Aurora className="opacity-70" />
 
       <div className="container mx-auto max-w-5xl relative z-10">
         <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true, margin: "-100px" }}
-           transition={{ duration: 0.6 }}
-           className="bg-brand-darkPanel border border-border rounded-xl p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center shadow-2xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="grain relative overflow-hidden rounded-2xl border border-brand-turquoise/30 bg-brand-darkPanel p-8 md:p-14 shadow-2xl"
         >
-          <div className="flex-1 text-center md:text-left">
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">{t.title1}<span className="text-brand-turquoise">{t.title2}</span></h2>
-            <p className="text-lg text-muted mb-8 max-w-md">
-              {t.description}
-            </p>
-            
-            <div className="flex items-center justify-center md:justify-start gap-3 text-muted text-sm mt-8">
-              <span className="flex items-center gap-2">
-                <MessageCircle size={16} className="text-brand-lime" />
-                {t.fastResponse}
-              </span>
-              <span className="w-1 h-1 rounded-full bg-border" />
-              <a href="mailto:ridencedenods@gmail.com" className="hover:text-text transition-colors flex items-center gap-2">
-                <Mail size={16} />
-                ridencedenods@gmail.com
-              </a>
-            </div>
-          </div>
+          <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-brand-blue via-brand-turquoise to-brand-lime" />
 
-          <div className="w-full md:w-auto md:min-w-[400px]">
-            <form onSubmit={handleWhatsApp} className="space-y-4">
-              <div className="space-y-4">
-                <Input 
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="flex-1 text-center md:text-left">
+              <p className="eyebrow mb-4">{t.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-5 leading-tight text-text">
+                {t.title1}
+                <span className="text-gradient">{t.title2}</span>
+              </h2>
+              <p className="text-lg text-muted mb-8 max-w-md leading-relaxed">{t.description}</p>
+
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3 text-sm text-muted">
+                <span className="flex items-center gap-2">
+                  <Zap size={16} className="text-brand-lime" />
+                  {t.fastResponse}
+                </span>
+                <span className="flex items-center gap-2">
+                  <ShieldCheck size={16} className="text-brand-turquoise" />
+                  {t.noCommitment}
+                </span>
+              </div>
+            </div>
+
+            <div className="w-full md:w-auto md:min-w-[380px]">
+              <form onSubmit={handleWhatsApp} className="space-y-4">
+                <Input
                   placeholder={t.namePlaceholder}
                   required
                   value={formData.name}
-                  onChange={e => setFormData({ ...formData, name: e.target.value })}
-                  className="h-14"
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="h-14 bg-brand-night/60"
                 />
-                <Input 
+                <Input
                   placeholder={t.companyPlaceholder}
                   value={formData.company}
-                  onChange={e => setFormData({ ...formData, company: e.target.value })}
-                  className="h-14"
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  className="h-14 bg-brand-night/60"
                 />
-              </div>
-              <Button type="submit" size="lg" className="w-full gap-3 mt-4">
-                <MessageCircle size={20} />
-                {t.submit}
-              </Button>
-            </form>
+                <Button type="submit" size="lg" className="w-full gap-3">
+                  <MessageCircle size={20} />
+                  {t.submit}
+                </Button>
+              </form>
+            </div>
           </div>
         </motion.div>
       </div>
