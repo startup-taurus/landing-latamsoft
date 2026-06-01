@@ -11,59 +11,118 @@ export const content = {
     // HERO — habla de LatamSoft, el estudio.
     hero: {
       eyebrow: "Estudio de software · Latinoamérica",
-      title1: "Construimos el sistema",
-      title2: "que tu negocio necesita",
+      title1: "Software para ordenar",
+      title2: "y hacer crecer tu negocio",
       title3: "",
       description:
-        "Hacemos software a la medida de cómo trabaja tu negocio y desarrollamos productos propios para sectores que conocemos bien, como las ópticas. La idea es simple: que dejes los cuadernos y el Excel suelto, y tengas todo ordenado en un solo lugar.",
+        "Convertimos tu forma real de trabajar en un sistema claro para todo tu equipo. Creamos software a medida y adaptamos productos propios para negocios que necesitan ordenar procesos, ventas, clientes, inventario, logística o atención.",
       ctaPrimary: "Cuéntanos tu proyecto",
       ctaSecondary: "Ver lo que hacemos",
       // Etiquetas que rotan en la marquesina del hero (lo que construimos).
       ticker: [
         "Sistemas a la medida",
         "Productos propios",
+        "Software de logística",
         "Gestión de ópticas",
         "Plataformas para institutos",
+        "Tiendas virtuales",
+        "Páginas informativas",
         "Automatización de procesos",
         "Inventario y ventas",
         "Reportes claros",
-        "En la nube",
+        "Sistemas en la nube",
       ],
       // Tarjeta lateral: lo que entregamos, no una ficha de optometría.
       cardTitle: "Lo que recibes",
       cardPoints: [
-        "Un sistema ordenado, hecho para ti",
-        "Tu equipo capacitado y acompañado",
-        "Soporte humano que entiende tu negocio",
+        "Un sistema pensado para tu operación",
+        "Tu equipo capacitado para usarlo",
+        "Soporte humano después de la entrega",
       ],
       cardStatus: "Tu operación, en un solo lugar",
+    },
+
+    // BARRA DE CONFIANZA — 4 bloques después del hero.
+    trustBar: {
+      items: [
+        {
+          title: "Software para negocios reales",
+          text: "Creamos soluciones para empresas que ya venden, atienden clientes y necesitan más orden.",
+        },
+        {
+          title: "Dos formas de trabajar",
+          text: "Podemos crear un sistema desde cero o adaptar un producto propio a tu negocio.",
+        },
+        {
+          title: "Varios tipos de proyectos",
+          text: "Hemos trabajado con sistemas de gestión, logística, ópticas, educación, tiendas virtuales y páginas informativas.",
+        },
+        {
+          title: "Acompañamiento cercano",
+          text: "Te ayudamos antes, durante y después de la entrega.",
+        },
+      ],
+    },
+
+    // CUÁNDO PODEMOS AYUDARTE — después de "Qué hacemos".
+    whenToHelp: {
+      eyebrow: "Cuándo podemos ayudarte",
+      title: "Cuando Excel, WhatsApp y los procesos manuales ya no alcanzan",
+      subtitle:
+        "Si tu equipo pierde tiempo buscando información, repitiendo tareas o preguntando en qué estado está cada cosa, puede ser momento de ordenar tu negocio con un sistema.",
+      items: [
+        {
+          title: "Tus datos están en muchos lugares",
+          text: "Clientes, ventas, pedidos o inventario viven en archivos, chats o cuadernos separados.",
+        },
+        {
+          title: "Tu equipo repite tareas todos los días",
+          text: "Hay trabajo manual que podría hacerse más rápido y con menos errores.",
+        },
+        {
+          title: "No tienes reportes claros",
+          text: "Te cuesta saber qué se vendió, qué falta, qué se entregó o qué está pendiente.",
+        },
+        {
+          title: "Tu negocio creció",
+          text: "Lo que antes funcionaba ahora se volvió lento o difícil de controlar.",
+        },
+        {
+          title: "Necesitas vender en línea",
+          text: "Quieres una tienda virtual clara para mostrar productos y recibir pedidos.",
+        },
+        {
+          title: "Necesitas mostrar mejor tu empresa",
+          text: "Tu página debe explicar bien quién eres, qué haces y cómo contactarte.",
+        },
+      ],
     },
 
     // QUÉ HACEMOS — los dos caminos del estudio.
     services: {
       eyebrow: "Qué hacemos",
-      title: "Dos formas de ordenar tu negocio",
+      title: "Dos caminos para ordenar tu negocio",
       subtitle:
-        "Algunos negocios necesitan algo hecho exactamente a su medida. Otros encajan perfecto con un producto que ya conocemos al detalle. Hacemos las dos cosas.",
+        "Algunos negocios necesitan un sistema hecho desde cero. Otros pueden avanzar más rápido con un producto propio que adaptamos a su forma de trabajar. En ambos casos, buscamos lo mismo: que tu operación sea más clara, más ordenada y más fácil de manejar.",
       items: [
         {
           tag: "A tu medida",
           title: "Software hecho para cómo trabajas tú",
-          text: "Si tu negocio se mueve entre Excel, papeles y WhatsApp, construimos el sistema que junte todo en un solo lugar. Partimos de tu forma real de trabajar, no de una plantilla.",
+          text: "Si tu negocio se mueve entre Excel, papeles, WhatsApp o tareas manuales, construimos un sistema que junte todo en un solo lugar. Partimos de tu forma real de trabajar, no de una plantilla.",
           bullets: [
             "Pensado alrededor de tu operación",
-            "Crece contigo, sin rehacerlo",
+            "Crece contigo, sin rehacerlo todo",
             "Tú decides qué necesitas, nosotros lo armamos",
           ],
         },
         {
           tag: "Productos propios",
-          title: "Sistemas listos para sectores que dominamos",
-          text: "Para rubros que conocemos a fondo tenemos productos ya hechos, probados con negocios reales. Empiezas más rápido y con algo que ya resuelve los problemas de tu día a día.",
+          title: "Sistemas listos que adaptamos a tu negocio",
+          text: "Para algunos sectores ya tenemos productos propios que resuelven problemas comunes. No empiezas desde cero: partimos de una base que ya conocemos y la ajustamos a tus servicios, sucursales, equipo y forma de trabajar.",
           bullets: [
-            "Listos para usar, no desde cero",
-            "Probados con negocios como el tuyo",
-            "Se ajustan a tus servicios y sucursales",
+            "Empiezas más rápido",
+            "Se adapta a tu operación",
+            "Probado con negocios reales",
           ],
         },
       ],
@@ -74,7 +133,7 @@ export const content = {
       eyebrow: "Cómo trabajamos",
       title: "Sin tecnicismos y sin perderte en el camino",
       subtitle:
-        "No necesitas saber de tecnología. Nos encargamos de la parte difícil para que tu equipo solo tenga que usar el sistema.",
+        "No necesitas llegar con una idea técnica. Nos cuentas cómo trabaja tu negocio, qué te quita tiempo y qué quieres mejorar. Nosotros convertimos eso en una solución clara.",
       steps: [
         {
           n: "01",
@@ -83,8 +142,8 @@ export const content = {
         },
         {
           n: "02",
-          title: "Lo armamos a tu medida",
-          text: "Configuramos o construimos el sistema con tus servicios, tus sucursales y tu forma de trabajar. Tú no tocas nada técnico.",
+          title: "Diseñamos la solución",
+          text: "Definimos qué necesita tu sistema, producto, tienda o página para resolver el problema sin complicarlo de más.",
         },
         {
           n: "03",
@@ -102,31 +161,55 @@ export const content = {
     // PORTAFOLIO — el eje de la página.
     portfolio: {
       eyebrow: "Proyectos",
-      title: "Algunos sistemas que ya construimos",
+      title: "Proyectos que podemos construir contigo",
       subtitle:
-        "Cada proyecto nace del mismo lugar: un negocio cansado del desorden que necesitaba todo en un solo sistema. Estos son algunos.",
+        "Trabajamos con negocios que necesitan ordenar su operación, vender en línea, controlar procesos o presentar mejor sus servicios.",
       items: [
         {
           badge: "Producto propio",
           tag: "Ópticas y optometría",
           title: "Sistema de gestión para ópticas",
-          text: "Reúne pacientes, historia clínica visual, lentes, ventas e inventario en un solo lugar, con recordatorios automáticos por WhatsApp. Es nuestro producto más maduro: te lo mostramos en detalle más abajo.",
-          link: "Ver el caso completo",
+          text: "Reúne pacientes, historia clínica visual, lentes, ventas, inventario y recordatorios por WhatsApp en un solo lugar.",
+          link: "Ver caso de ópticas",
           anchor: "#caso-opticas",
         },
         {
           badge: "Proyecto",
           tag: "Educación",
-          title: "Plataforma para institutos de idiomas",
-          text: "Matrículas, asistencia, evaluaciones y cobros de un instituto, ordenados en un mismo sistema y fáciles de seguir para profesores y administración.",
-          link: "Ver el caso",
+          title: "Plataforma para institutos",
+          text: "Organiza matrículas, asistencia, evaluaciones, cobros y seguimiento de estudiantes en un solo sistema.",
+          link: "Ver caso educativo",
           anchor: "#caso-instituto",
         },
         {
-          badge: "A tu medida",
-          tag: "Tu sector",
+          badge: "A medida",
+          tag: "Logística",
+          title: "Software para logística",
+          text: "Creamos sistemas para controlar pedidos, entregas, rutas, estados y seguimiento de operaciones.",
+          link: "Cuéntanos tu operación",
+          anchor: "#contacto",
+        },
+        {
+          badge: "Comercio digital",
+          tag: "Tiendas virtuales",
+          title: "Tiendas virtuales",
+          text: "Desarrollamos tiendas en línea para mostrar productos, recibir pedidos y vender de forma más ordenada.",
+          link: "Quiero vender en línea",
+          anchor: "#contacto",
+        },
+        {
+          badge: "Presencia digital",
+          tag: "Páginas informativas",
+          title: "Páginas para empresas",
+          text: "Creamos páginas claras para presentar tu negocio, explicar tus servicios y facilitar que tus clientes te contacten.",
+          link: "Quiero mejorar mi página",
+          anchor: "#contacto",
+        },
+        {
+          badge: "A medida",
+          tag: "Tu negocio",
           title: "¿Tu negocio es distinto?",
-          text: "Si lo tuyo no es una óptica ni un instituto, igual podemos ayudarte. Cuéntanos cómo trabajas y construimos el sistema que te ordene.",
+          text: "Si tienes un proceso propio, lo revisamos contigo y construimos una solución que encaje con tu forma de trabajar.",
           link: "Cuéntanos tu caso",
           anchor: "#contacto",
         },
@@ -136,10 +219,10 @@ export const content = {
     // Encabezado del CASO DESTACADO de ópticas (envuelve problem/shift/features/who).
     caseIntro: {
       kicker: "Caso destacado",
-      eyebrow: "Producto propio · Ópticas y optometría",
-      title: "Así ordenamos una óptica de principio a fin",
+      eyebrow: "Caso destacado · Producto propio",
+      title: "Un ejemplo de cómo ordenamos un negocio real",
       subtitle:
-        "Este es nuestro producto más maduro. Lo construimos junto a ópticas reales, así que resuelve los problemas del día a día tal como pasan en el mostrador.",
+        "En el sector óptico desarrollamos una solución completa para ordenar pacientes, citas, ventas, inventario, lentes y recordatorios. Es un ejemplo de cómo un producto propio puede adaptarse a la operación real de un negocio.",
     },
 
     // El día a día sin sistema (dentro del caso de ópticas).
@@ -447,15 +530,15 @@ export const content = {
 
     cta: {
       eyebrow: "Demos el primer paso",
-      title1: "Conversemos sobre tu",
-      title2: " negocio",
+      title1: "Cuéntanos qué quieres",
+      title2: " ordenar en tu negocio",
       description:
-        "Cuéntanos un poco de lo que haces y a qué le pierdes tiempo. Te respondemos por WhatsApp, sin compromiso, y vemos juntos cómo ordenarlo.",
+        "Escríbenos y revisamos contigo si necesitas un sistema a medida, un producto adaptado, una tienda virtual, una página informativa o una mejora en tus procesos actuales.",
       fastResponse: "Te respondemos rápido",
       noCommitment: "Sin compromiso",
       namePlaceholder: "Tu nombre *",
       companyPlaceholder: "Nombre de tu negocio",
-      submit: "Conversar por WhatsApp",
+      submit: "Solicitar una revisión por WhatsApp",
       whatsappTemplate:
         "Hola, soy {{name}}{{company}}. Vi la web de LatamSoft y me gustaría conversar sobre un sistema para mi negocio.",
     },
@@ -479,56 +562,113 @@ export const content = {
 
     hero: {
       eyebrow: "Software studio · Latin America",
-      title1: "We build the system",
-      title2: "your business needs",
+      title1: "Software to bring order",
+      title2: "and growth to your business",
       title3: "",
       description:
-        "We build software tailored to how your business actually works, and we develop our own products for sectors we know well, like optical shops. The idea is simple: leave the notebooks and scattered spreadsheets behind and have everything in one place.",
+        "We turn how you actually work into a clear system for your whole team. We build custom software and adapt our own products for businesses that need to organize processes, sales, customers, inventory, logistics or service.",
       ctaPrimary: "Tell us about your project",
       ctaSecondary: "See what we do",
       ticker: [
         "Tailored systems",
         "Our own products",
+        "Logistics software",
         "Optical shop management",
         "Platforms for institutes",
+        "Online stores",
+        "Informational websites",
         "Process automation",
         "Inventory & sales",
         "Clear reports",
-        "In the cloud",
+        "Cloud systems",
       ],
       cardTitle: "What you get",
       cardPoints: [
-        "An orderly system, built for you",
-        "Your team trained and supported",
-        "Human support that gets your business",
+        "A system built around your operation",
+        "Your team trained to use it",
+        "Human support after delivery",
       ],
       cardStatus: "Your operation, in one place",
     },
 
+    trustBar: {
+      items: [
+        {
+          title: "Software for real businesses",
+          text: "We create solutions for companies that already sell, serve customers and need more order.",
+        },
+        {
+          title: "Two ways to work",
+          text: "We can build a system from scratch or adapt an own product to your business.",
+        },
+        {
+          title: "Several types of projects",
+          text: "We've worked with management systems, logistics, optical shops, education, online stores and informational websites.",
+        },
+        {
+          title: "Close support",
+          text: "We help you before, during and after delivery.",
+        },
+      ],
+    },
+
+    whenToHelp: {
+      eyebrow: "When we can help",
+      title: "When spreadsheets, WhatsApp and manual processes are no longer enough",
+      subtitle:
+        "If your team loses time searching for information, repeating tasks or asking about the status of things, it may be time to bring order to your business with a system.",
+      items: [
+        {
+          title: "Your data lives in many places",
+          text: "Customers, sales, orders or inventory exist in separate files, chats or notebooks.",
+        },
+        {
+          title: "Your team repeats tasks every day",
+          text: "There's manual work that could be done faster and with fewer errors.",
+        },
+        {
+          title: "You don't have clear reports",
+          text: "You struggle to know what was sold, what's missing, what was delivered or what's pending.",
+        },
+        {
+          title: "Your business grew",
+          text: "What used to work has become slow or hard to control.",
+        },
+        {
+          title: "You need to sell online",
+          text: "You want a clear online store to display products and receive orders.",
+        },
+        {
+          title: "You need to show your business better",
+          text: "Your site should clearly explain who you are, what you do and how clients can contact you.",
+        },
+      ],
+    },
+
     services: {
       eyebrow: "What we do",
-      title: "Two ways to bring your business into order",
+      title: "Two paths to bring your business into order",
       subtitle:
-        "Some businesses need something built exactly to fit them. Others match perfectly with a product we already know inside out. We do both.",
+        "Some businesses need a system built from scratch. Others can move faster with an own product we adapt to their way of working. Either way, we're after the same thing: a clearer, more orderly, easier-to-manage operation.",
       items: [
         {
           tag: "Tailored",
           title: "Software built for how you work",
-          text: "If your business runs on spreadsheets, paper and WhatsApp, we build the system that brings it all into one place. We start from how you actually work, not from a template.",
+          text: "If your business runs on spreadsheets, paper, WhatsApp or manual tasks, we build the system that brings it all into one place. We start from how you actually work, not from a template.",
           bullets: [
             "Designed around your operation",
-            "Grows with you, no rebuild",
+            "Grows with you, no full rebuild",
             "You decide what you need, we build it",
           ],
         },
         {
           tag: "Own products",
-          title: "Ready-made systems for sectors we master",
-          text: "For fields we know deeply we have products already built and tested with real businesses. You start faster, with something that already solves your day-to-day problems.",
+          title: "Ready-made systems we adapt to your business",
+          text: "For some sectors we already have our own products that solve common problems. You don't start from scratch — we begin from a base we know well and adjust it to your services, branches, team and way of working.",
           bullets: [
-            "Ready to use, not from scratch",
-            "Tested with businesses like yours",
-            "Adapts to your services and branches",
+            "You start faster",
+            "Adapts to your operation",
+            "Tested with real businesses",
           ],
         },
       ],
@@ -538,7 +678,7 @@ export const content = {
       eyebrow: "How we work",
       title: "No jargon, and you never get lost along the way",
       subtitle:
-        "You don't need to know tech. We handle the hard part so your team only has to use the system.",
+        "You don't need to arrive with a technical idea. You tell us how your business works, what eats your time and what you want to improve. We turn that into a clear solution.",
       steps: [
         {
           n: "01",
@@ -547,8 +687,8 @@ export const content = {
         },
         {
           n: "02",
-          title: "We build it to fit you",
-          text: "We configure or build the system with your services, your branches and your way of working. You touch nothing technical.",
+          title: "We design the solution",
+          text: "We define what your system, product, store or page needs to solve the problem without overcomplicating it.",
         },
         {
           n: "03",
@@ -565,31 +705,55 @@ export const content = {
 
     portfolio: {
       eyebrow: "Projects",
-      title: "A few systems we've already built",
+      title: "Projects we can build with you",
       subtitle:
-        "Every project starts in the same place: a business tired of the chaos that needed everything in one system. Here are some.",
+        "We work with businesses that need to organize their operation, sell online, control processes or present their services better.",
       items: [
         {
           badge: "Own product",
           tag: "Optical & optometry",
           title: "Management system for optical shops",
-          text: "Brings patients, visual health records, lenses, sales and inventory into one place, with automatic WhatsApp reminders. It's our most mature product — we show it in detail below.",
-          link: "See the full case",
+          text: "Brings patients, visual health records, lenses, sales, inventory and WhatsApp reminders into one place.",
+          link: "See the optics case",
           anchor: "#caso-opticas",
         },
         {
           badge: "Project",
           tag: "Education",
-          title: "Platform for language institutes",
-          text: "Enrollments, attendance, assessments and payments for an institute, organized in one system and easy to follow for teachers and admin.",
-          link: "See the case",
+          title: "Platform for institutes",
+          text: "Organizes enrollments, attendance, assessments, payments and student tracking in one system.",
+          link: "See the education case",
           anchor: "#caso-instituto",
         },
         {
           badge: "Tailored",
-          tag: "Your sector",
+          tag: "Logistics",
+          title: "Logistics software",
+          text: "We build systems to control orders, deliveries, routes, statuses and operation tracking.",
+          link: "Tell us about your operation",
+          anchor: "#contacto",
+        },
+        {
+          badge: "Digital commerce",
+          tag: "Online stores",
+          title: "Online stores",
+          text: "We develop online stores to display products, receive orders and sell in a more organized way.",
+          link: "I want to sell online",
+          anchor: "#contacto",
+        },
+        {
+          badge: "Digital presence",
+          tag: "Informational websites",
+          title: "Business websites",
+          text: "We create clear pages to present your business, explain your services and make it easy for clients to reach you.",
+          link: "I want to improve my site",
+          anchor: "#contacto",
+        },
+        {
+          badge: "Tailored",
+          tag: "Your business",
           title: "Is your business different?",
-          text: "If you're not an optical shop or an institute, we can still help. Tell us how you work and we'll build the system that brings it into order.",
+          text: "If you have your own process, we review it with you and build a solution that fits how you work.",
           link: "Tell us your case",
           anchor: "#contacto",
         },
@@ -598,10 +762,10 @@ export const content = {
 
     caseIntro: {
       kicker: "Featured case",
-      eyebrow: "Own product · Optical & optometry",
-      title: "How we bring an optical shop into order, end to end",
+      eyebrow: "Featured case · Own product",
+      title: "An example of how we bring a real business into order",
       subtitle:
-        "This is our most mature product. We built it alongside real optical shops, so it solves the day-to-day problems exactly as they happen at the counter.",
+        "In the optical sector we developed a complete solution to organize patients, appointments, sales, inventory, lenses and reminders. It's an example of how an own product can adapt to the real operation of a business.",
     },
 
     problem: {
@@ -908,15 +1072,15 @@ export const content = {
 
     cta: {
       eyebrow: "Let's take the first step",
-      title1: "Let's talk about your",
-      title2: " business",
+      title1: "Tell us what you want",
+      title2: " to bring into order",
       description:
-        "Tell us a bit about what you do and where you lose time. We'll reply over WhatsApp, no strings attached, and figure out together how to bring it into order.",
+        "Write to us and we'll review with you whether you need a custom system, an adapted product, an online store, an informational website or an improvement to your current processes.",
       fastResponse: "We reply fast",
       noCommitment: "No commitment",
       namePlaceholder: "Your name *",
       companyPlaceholder: "Your business name",
-      submit: "Chat on WhatsApp",
+      submit: "Request a WhatsApp review",
       whatsappTemplate:
         "Hi, I'm {{name}}{{company}}. I saw the LatamSoft site and I'd like to talk about a system for my business.",
     },

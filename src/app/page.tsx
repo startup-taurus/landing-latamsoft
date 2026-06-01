@@ -1,6 +1,8 @@
 import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
+import { TrustBar } from "@/components/sections/TrustBar";
 import { Services } from "@/components/sections/Services";
+import { WhenToHelp } from "@/components/sections/WhenToHelp";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { CaseIntro } from "@/components/sections/CaseIntro";
@@ -22,7 +24,9 @@ export default function Home() {
       <main className="flex-1 flex flex-col w-full">
         {/* The studio */}
         <Hero />
+        <TrustBar />
         <Services />
+        <WhenToHelp />
         <HowItWorks />
         <Portfolio />
 

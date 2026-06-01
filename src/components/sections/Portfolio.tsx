@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Glasses, GraduationCap, Sparkles, ArrowRight } from "lucide-react";
+import { Glasses, GraduationCap, Truck, ShoppingCart, Globe, Sparkles, ArrowRight } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
-const icons = [Glasses, GraduationCap, Sparkles];
+const icons = [Glasses, GraduationCap, Truck, ShoppingCart, Globe, Sparkles];
 
 export function Portfolio() {
   const { language } = useLanguage();
@@ -39,7 +39,7 @@ export function Portfolio() {
                 initial={{ opacity: 0, y: 26 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
               >
                 <TiltCard max={6} className="h-full">
                   <SpotlightCard
