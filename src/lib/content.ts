@@ -44,6 +44,8 @@ export const content = {
 
     // BARRA DE CONFIANZA — 4 bloques después del hero.
     trustBar: {
+      eyebrow: "Por qué elegirnos",
+      title: "Somos tu socio de confianza",
       items: [
         {
           title: "Software para negocios reales",
@@ -592,6 +594,8 @@ export const content = {
     },
 
     trustBar: {
+      eyebrow: "Why choose us",
+      title: "We're your trusted partner",
       items: [
         {
           title: "Software for real businesses",
