@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { X, Check, ArrowRight } from "lucide-react";
+import { Parallax } from "@/components/ui/Parallax";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
@@ -11,7 +12,12 @@ export function Shift() {
 
   return (
     <section className="relative py-24 md:py-28 px-6 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] bg-brand-turquoise/10 blur-[140px] rounded-full pointer-events-none" />
+      <Parallax
+        amount={110}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
+        <div className="h-[40vw] w-[60vw] rounded-full bg-brand-turquoise/10 blur-[140px]" />
+      </Parallax>
 
       <div className="container mx-auto max-w-5xl relative z-10">
         <motion.div

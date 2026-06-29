@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Glasses, GraduationCap, Truck, ShoppingCart, Globe, Sparkles, ArrowRight } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
@@ -17,30 +17,20 @@ export function Portfolio() {
   return (
     <section id="proyectos" className="relative py-24 md:py-32 px-6">
       <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-14 md:mb-16"
-        >
+        <Reveal className="max-w-3xl mb-14 md:mb-16">
           <p className="eyebrow mb-4">{t.eyebrow}</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-5 leading-tight">{t.title}</h2>
-          <p className="text-lg text-muted leading-relaxed">{t.subtitle}</p>
-        </motion.div>
+          <h2 className="text-balance font-display text-3xl md:text-5xl font-bold mb-5 leading-tight">
+            {t.title}
+          </h2>
+          <p className="text-pretty text-lg leading-relaxed text-muted">{t.subtitle}</p>
+        </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <Stagger gap={0.1} className="grid md:grid-cols-3 gap-5">
           {t.items.map((item, i) => {
             const Icon = icons[i % icons.length];
             const isFlagship = i === 0;
             return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 26 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
-              >
+              <StaggerItem key={i} blur distance={28} className="h-full">
                 <TiltCard max={6} className="h-full">
                   <SpotlightCard
                     glow={isFlagship ? "rgba(18,199,184,0.22)" : "rgba(18,199,184,0.16)"}
@@ -79,10 +69,10 @@ export function Portfolio() {
                     )}
                   </SpotlightCard>
                 </TiltCard>
-              </motion.div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

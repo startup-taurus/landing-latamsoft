@@ -14,6 +14,19 @@ export const content = {
       title1: "Software para ordenar",
       title2: "y hacer crecer tu negocio",
       title3: "",
+      // Headline rendered as styled segments. The two accent words carry the
+      // value prop: ordenar = turquoise (order), crecer = lime (growth).
+      titleLines: [
+        [
+          { text: "Software para ", accent: "none" },
+          { text: "ordenar", accent: "turquoise" },
+        ],
+        [
+          { text: "y hacer ", accent: "none" },
+          { text: "crecer", accent: "lime" },
+          { text: " tu negocio", accent: "none" },
+        ],
+      ],
       description:
         "Convertimos tu forma real de trabajar en un sistema claro para todo tu equipo. Creamos software a medida y adaptamos productos propios para negocios que necesitan ordenar procesos, ventas, clientes, inventario, logística o atención.",
       ctaPrimary: "Cuéntanos tu proyecto",
@@ -567,6 +580,17 @@ export const content = {
       title1: "Software to bring order",
       title2: "and growth to your business",
       title3: "",
+      titleLines: [
+        [
+          { text: "Software to bring ", accent: "none" },
+          { text: "order", accent: "turquoise" },
+        ],
+        [
+          { text: "and ", accent: "none" },
+          { text: "growth", accent: "lime" },
+          { text: " to your business", accent: "none" },
+        ],
+      ],
       description:
         "We turn how you actually work into a clear system for your whole team. We build custom software and adapt our own products for businesses that need to organize processes, sales, customers, inventory, logistics or service.",
       ctaPrimary: "Tell us about your project",

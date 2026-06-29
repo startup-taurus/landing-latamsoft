@@ -45,7 +45,7 @@ export function ContactForm() {
               <p className="eyebrow mb-4">{t.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-5xl font-bold mb-5 leading-tight text-text">
                 {t.title1}
-                <span className="text-gradient">{t.title2}</span>
+                <span className="text-brand-turquoise">{t.title2}</span>
               </h2>
               <p className="text-lg text-muted mb-8 max-w-md leading-relaxed">{t.description}</p>
 

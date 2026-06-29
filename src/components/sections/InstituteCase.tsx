@@ -185,7 +185,7 @@ export function InstituteCase() {
                 className="rounded-xl border border-border bg-background p-4 text-center"
                 title={m.text}
               >
-                <div className="font-display text-3xl font-extrabold text-gradient leading-none mb-1">
+                <div className="font-display text-3xl font-extrabold text-brand-lime leading-none mb-1">
                   <CountUp value={m.stat} />
                 </div>
                 <p className="text-[0.7rem] text-muted leading-tight">{m.label}</p>

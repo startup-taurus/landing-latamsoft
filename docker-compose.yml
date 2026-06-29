@@ -1,0 +1,27 @@
+# LatamSoft landing — single Next.js (standalone) container.
+# No database, no secrets: the contact form just opens WhatsApp.
+# nginx on the host proxies latamsoft.io -> 127.0.0.1:3004.
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: landing-latamsoft-web
+    container_name: latamsoft-web
+    restart: unless-stopped
+    # bind to localhost only; nginx terminates TLS and proxies in.
+    # change the host port (3004) if it ever collides with another site.
+    ports:
+      - "127.0.0.1:3004:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+      - NEXT_TELEMETRY_DISABLED=1
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

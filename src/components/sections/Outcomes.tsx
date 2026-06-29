@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { CountUp } from "@/components/ui/CountUp";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
@@ -12,36 +12,32 @@ export function Outcomes() {
   return (
     <section className="relative py-20 md:py-24 px-6">
       <div className="container mx-auto max-w-6xl">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="font-display text-2xl md:text-4xl font-bold text-center max-w-3xl mx-auto mb-14 leading-tight"
-        >
-          {t.title}
-        </motion.h2>
+        <Reveal className="mb-14 text-center">
+          <h2 className="mx-auto max-w-3xl text-balance font-display text-2xl font-bold leading-tight md:text-4xl">
+            {t.title}
+          </h2>
+        </Reveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-xl overflow-hidden border border-border">
+        <Stagger
+          gap={0.09}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-xl overflow-hidden border border-border"
+        >
           {t.items.map((item, i) => (
-            <motion.div
+            <StaggerItem
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              distance={26}
               className="bg-background p-7 md:p-8 text-center"
             >
-              <div className="font-display text-4xl md:text-5xl font-extrabold text-gradient mb-1">
+              <div className="mb-1 font-display text-4xl font-extrabold text-brand-lime md:text-5xl">
                 <CountUp value={item.stat} />
               </div>
-              <p className="font-mono text-xs uppercase tracking-widest text-brand-turquoise mb-3">
+              <p className="mb-3 font-mono text-xs uppercase tracking-widest text-brand-turquoise">
                 {item.label}
               </p>
-              <p className="text-muted text-sm leading-relaxed">{item.text}</p>
-            </motion.div>
+              <p className="text-sm leading-relaxed text-muted">{item.text}</p>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

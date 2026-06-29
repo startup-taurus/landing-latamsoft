@@ -3,6 +3,7 @@ import { Sora, Hanken_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
 // Display / headlines — geometric and characterful, not the overused defaults.
@@ -98,6 +99,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased min-h-screen bg-background text-text flex flex-col selection:bg-brand-lime selection:text-brand-night">
+        <ScrollProgress />
         <ScrollToTop />
         <LanguageProvider>
           {children}
