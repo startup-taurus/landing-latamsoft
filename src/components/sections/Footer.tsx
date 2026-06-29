@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
@@ -39,8 +40,8 @@ export function Footer() {
   return (
     <footer className="relative z-10 border-t border-border bg-background">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div>
+        <Stagger gap={0.09} className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <StaggerItem distance={20}>
             <Image
               src="/brand/latamsoft-isologo-light.svg"
               alt="LatamSoft"
@@ -53,10 +54,10 @@ export function Footer() {
               <MapPin size={13} className="text-brand-lime" />
               {t.madeIn}
             </span>
-          </div>
+          </StaggerItem>
 
           {cols.map((col) => (
-            <div key={col.title}>
+            <StaggerItem key={col.title} distance={20}>
               <p className="font-mono text-xs uppercase tracking-widest text-brand-turquoise mb-4">
                 {col.title}
               </p>
@@ -69,15 +70,16 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
         <motion.div
           className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
           <p>© {currentYear} LatamSoft. {t.rights}</p>
           <p className="font-mono">latamsoft.io</p>

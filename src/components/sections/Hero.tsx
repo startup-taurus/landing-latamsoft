@@ -157,7 +157,7 @@ export function Hero() {
 
           {/* RIGHT — bespoke system board (parallax depth) */}
           <Parallax amount={48} className="w-full">
-            <HeroVisual status={t.cardStatus} />
+            <HeroVisual board={t.board} />
           </Parallax>
         </div>
       </div>

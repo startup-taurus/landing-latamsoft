@@ -19,6 +19,7 @@ import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { Marquee } from "@/components/ui/Marquee";
 import { CountUp } from "@/components/ui/CountUp";
+import { Parallax } from "@/components/ui/Parallax";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
@@ -41,7 +42,9 @@ export function InstituteCase() {
 
   return (
     <section id="caso-instituto" className="relative py-24 md:py-32 px-6 scroll-mt-24 overflow-hidden">
-      <div className="absolute -top-20 right-0 w-[36vw] h-[36vw] bg-brand-lime/10 blur-[150px] rounded-full pointer-events-none" />
+      <Parallax amount={100} className="pointer-events-none absolute -top-20 right-0">
+        <div className="h-[36vw] w-[36vw] rounded-full bg-brand-lime/10 blur-[150px]" />
+      </Parallax>
 
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* "another case" divider — mirrors the optics one but flips the accent */}

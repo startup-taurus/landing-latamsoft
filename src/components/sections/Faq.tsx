@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
@@ -14,27 +15,20 @@ export function Faq() {
   return (
     <section id="preguntas" className="relative py-24 md:py-32 px-6 bg-surface/40 border-y border-border">
       <div className="container mx-auto max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <Reveal className="text-center mb-12">
           <p className="eyebrow mb-4">{t.eyebrow}</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">{t.title}</h2>
-        </motion.div>
+          <h2 className="text-balance font-display text-3xl md:text-5xl font-bold leading-tight">
+            {t.title}
+          </h2>
+        </Reveal>
 
-        <div className="space-y-3">
+        <Stagger gap={0.06} className="space-y-3">
           {t.items.map((item, i) => {
             const isOpen = open === i;
             return (
-              <motion.div
+              <StaggerItem
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
+                distance={16}
                 className={`rounded-xl border bg-background overflow-hidden transition-colors ${
                   isOpen ? "border-brand-turquoise/50" : "border-border"
                 }`}
@@ -67,10 +61,10 @@ export function Faq() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

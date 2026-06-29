@@ -17,44 +17,41 @@ import { CountUp } from "@/components/ui/CountUp";
 import { cn } from "@/lib/utils";
 import { EASE_OUT } from "@/lib/motion";
 
-const MODULES = [
-  { key: "inventario", label: "Inventario", icon: Boxes },
-  { key: "ventas", label: "Ventas", icon: LineChart },
-  { key: "clientes", label: "Clientes", icon: Users },
-  { key: "logistica", label: "Logística", icon: Truck },
-  { key: "reportes", label: "Reportes", icon: ClipboardList },
-];
+export interface HeroBoard {
+  caption: string;
+  app: string;
+  status: string;
+  summary: string;
+  modules: string[];
+  stats: { label: string; value: string; suffix: string }[];
+  feed: { label: string; meta: string }[];
+}
+
+const MODULE_ICONS = [Boxes, LineChart, Users, Truck, ClipboardList];
 
 // Bar heights (%) for the little activity chart.
 const BARS = [34, 52, 41, 64, 56, 78, 88];
 
-const FEED = [
-  { label: "Pedido #1042", meta: "Entregado" },
-  { label: "Venta del día", meta: "+ $1.240" },
-  { label: "Cliente nuevo", meta: "María L." },
-];
-
 /**
- * The hero's bespoke visual: a solid "system board" that depicts a business
- * brought into order — a real-feeling product window, NOT a glassmorphic
- * feature card. Continuous, quiet motion (a module that cycles, a chart that
- * grows, a feed that fills in) signals "live software" without shouting.
+ * The hero's bespoke visual: a solid window that depicts an *example* of the
+ * kind of system the studio builds for a client — framed by a caption so it
+ * never reads as "LatamSoft is a product". It's a real-feeling product window,
+ * NOT a glassmorphic feature card.
  *
- * Depth comes from a glow placed *behind* the panel, never a drop-shadow on the
- * panel itself (avoids the 1px-border + soft-shadow "ghost card" look).
+ * Continuous, quiet motion (a module that cycles, a chart that grows, a feed
+ * that fills in) signals "live software". Depth comes from a glow placed
+ * *behind* the panel, never a drop-shadow on the panel itself.
  */
-export function HeroVisual({ status }: { status: string }) {
+export function HeroVisual({ board }: { board: HeroBoard }) {
   const reduce = useReducedMotion();
   const [active, setActive] = React.useState(0);
 
   React.useEffect(() => {
     if (reduce) return;
-    const id = setInterval(
-      () => setActive((a) => (a + 1) % MODULES.length),
-      2600
-    );
+    const count = board.modules.length;
+    const id = setInterval(() => setActive((a) => (a + 1) % count), 2600);
     return () => clearInterval(id);
-  }, [reduce]);
+  }, [reduce, board.modules.length]);
 
   return (
     <motion.div
@@ -63,6 +60,12 @@ export function HeroVisual({ status }: { status: string }) {
       transition={{ duration: 0.8, delay: 0.25, ease: EASE_OUT }}
       className="relative mx-auto w-full max-w-md lg:max-w-none"
     >
+      {/* caption — frames the board as an example of the studio's work */}
+      <div className="mb-3 flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+        <span className="h-px w-6 bg-brand-turquoise/60" />
+        {board.caption}
+      </div>
+
       {/* depth glow — behind the panel, not a shadow on it */}
       <div aria-hidden className="absolute -inset-8 -z-10">
         <div className="absolute right-4 top-0 h-44 w-44 rounded-full bg-brand-turquoise/20 blur-[80px]" />
@@ -83,12 +86,12 @@ export function HeroVisual({ status }: { status: string }) {
                 />
               </div>
               <span className="font-mono text-[0.7rem] text-muted">
-                panel.latamsoft
+                {board.app}
               </span>
             </div>
             <span className="inline-flex items-center gap-1.5 font-mono text-[0.65rem] text-brand-lime">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-lime animate-glow-pulse" />
-              en vivo
+              {board.status}
             </span>
           </div>
 
@@ -96,11 +99,11 @@ export function HeroVisual({ status }: { status: string }) {
             {/* module sidebar — active item cycles with a sliding indicator */}
             <nav className="border-r border-border/70 p-2 sm:p-3">
               <ul className="space-y-1">
-                {MODULES.map((m, i) => {
-                  const Icon = m.icon;
+                {board.modules.map((label, i) => {
+                  const Icon = MODULE_ICONS[i % MODULE_ICONS.length];
                   const on = i === active;
                   return (
-                    <li key={m.key}>
+                    <li key={label}>
                       <div
                         className={cn(
                           "relative flex items-center gap-2.5 rounded-md px-2.5 py-2 transition-colors duration-300",
@@ -120,7 +123,7 @@ export function HeroVisual({ status }: { status: string }) {
                         )}
                         <Icon size={15} className="shrink-0" />
                         <span className="hidden text-xs font-semibold sm:block">
-                          {m.label}
+                          {label}
                         </span>
                       </div>
                     </li>
@@ -133,15 +136,27 @@ export function HeroVisual({ status }: { status: string }) {
             <div className="p-4 sm:p-5">
               <div className="flex items-center justify-between gap-3">
                 <p className="font-display text-sm font-bold leading-tight text-text">
-                  {status}
+                  {board.summary}
                 </p>
                 <ArrowUpRight size={16} className="shrink-0 text-brand-turquoise" />
               </div>
 
-              {/* two compact stats */}
+              {/* compact stats */}
               <div className="mt-3 grid grid-cols-2 gap-2">
-                <Stat label="Pedidos" value="1248" />
-                <Stat label="A tiempo" value="98" suffix="%" />
+                {board.stats.map((s) => (
+                  <div
+                    key={s.label}
+                    className="rounded-md border border-border/60 bg-brand-night/40 px-3 py-2"
+                  >
+                    <p className="font-mono text-[0.6rem] uppercase tracking-wider text-muted">
+                      {s.label}
+                    </p>
+                    <p className="font-display text-lg font-bold text-text">
+                      <CountUp value={s.value} />
+                      {s.suffix}
+                    </p>
+                  </div>
+                ))}
               </div>
 
               {/* activity chart — bars grow from the baseline */}
@@ -170,7 +185,7 @@ export function HeroVisual({ status }: { status: string }) {
 
               {/* live feed — rows fill in one by one */}
               <ul className="mt-4 space-y-1.5">
-                {FEED.map((f, i) => (
+                {board.feed.map((f, i) => (
                   <motion.li
                     key={f.label}
                     initial={{ opacity: 0, x: 12 }}
@@ -200,27 +215,5 @@ export function HeroVisual({ status }: { status: string }) {
         </div>
       </TiltCard>
     </motion.div>
-  );
-}
-
-function Stat({
-  label,
-  value,
-  suffix,
-}: {
-  label: string;
-  value: string;
-  suffix?: string;
-}) {
-  return (
-    <div className="rounded-md border border-border/60 bg-brand-night/40 px-3 py-2">
-      <p className="font-mono text-[0.6rem] uppercase tracking-wider text-muted">
-        {label}
-      </p>
-      <p className="font-display text-lg font-bold text-text">
-        <CountUp value={value} />
-        {suffix}
-      </p>
-    </div>
   );
 }

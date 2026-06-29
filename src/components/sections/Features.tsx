@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   ClipboardList,
   CalendarCheck,
@@ -13,6 +12,7 @@ import {
   Check,
 } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { useLanguage } from "@/lib/LanguageContext";
 import { content } from "@/lib/content";
 
@@ -34,32 +34,21 @@ export function Features() {
   return (
     <section id="funciones" className="relative py-24 md:py-32 px-6">
       <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-14 md:mb-20"
-        >
+        <Reveal className="max-w-3xl mb-14 md:mb-20">
           <p className="eyebrow mb-4">{t.eyebrow}</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-5 leading-tight">{t.title}</h2>
-          <p className="text-lg text-muted leading-relaxed">{t.subtitle}</p>
-        </motion.div>
+          <h2 className="text-balance font-display text-3xl md:text-5xl font-bold mb-5 leading-tight">
+            {t.title}
+          </h2>
+          <p className="text-pretty text-lg leading-relaxed text-muted">{t.subtitle}</p>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <Stagger gap={0.08} className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {t.items.map((item, i) => {
             const Icon = icons[i % icons.length];
             // First card spans two columns on large screens to break the grid.
             const wide = i === 0;
             return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: (i % 3) * 0.07 }}
-                className={wide ? "lg:col-span-2" : ""}
-              >
+              <StaggerItem key={i} blur distance={28} className={wide ? "lg:col-span-2" : ""}>
                 <SpotlightCard className="group/spot card-lift h-full p-7 md:p-8 hover:border-brand-turquoise/50">
                   <div className="absolute top-0 left-0 h-[3px] w-full origin-left scale-x-0 bg-gradient-to-r from-brand-turquoise to-brand-lime transition-transform duration-500 group-hover/spot:scale-x-100" />
 
@@ -88,10 +77,10 @@ export function Features() {
                     ))}
                   </ul>
                 </SpotlightCard>
-              </motion.div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

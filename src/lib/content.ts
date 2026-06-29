@@ -53,6 +53,24 @@ export const content = {
         "Soporte humano después de la entrega",
       ],
       cardStatus: "Tu operación, en un solo lugar",
+      // The hero's "system board" visual is framed as an EXAMPLE of what the
+      // studio builds for clients — LatamSoft is a studio, not a product.
+      board: {
+        caption: "Ejemplo · un sistema que construimos",
+        app: "gestión · demo",
+        status: "demo",
+        summary: "Resumen de hoy",
+        modules: ["Inventario", "Ventas", "Clientes", "Logística", "Reportes"],
+        stats: [
+          { label: "Pedidos", value: "1248", suffix: "" },
+          { label: "A tiempo", value: "98", suffix: "%" },
+        ],
+        feed: [
+          { label: "Pedido #1042", meta: "Entregado" },
+          { label: "Venta del día", meta: "+ $1.240" },
+          { label: "Cliente nuevo", meta: "María L." },
+        ],
+      },
     },
 
     // BARRA DE CONFIANZA — 4 bloques después del hero.
@@ -615,6 +633,22 @@ export const content = {
         "Human support after delivery",
       ],
       cardStatus: "Your operation, in one place",
+      board: {
+        caption: "Example · a system we built",
+        app: "management · demo",
+        status: "demo",
+        summary: "Today's summary",
+        modules: ["Inventory", "Sales", "Customers", "Logistics", "Reports"],
+        stats: [
+          { label: "Orders", value: "1248", suffix: "" },
+          { label: "On time", value: "98", suffix: "%" },
+        ],
+        feed: [
+          { label: "Order #1042", meta: "Delivered" },
+          { label: "Today's sales", meta: "+ $1,240" },
+          { label: "New customer", meta: "María L." },
+        ],
+      },
     },
 
     trustBar: {
